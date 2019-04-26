@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		A28E50B822710D86008CC822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50B722710D86008CC822 /* AppDelegate.swift */; };
-		A28E50BA22710D86008CC822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50B922710D86008CC822 /* ViewController.swift */; };
+		A28E50BA22710D86008CC822 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50B922710D86008CC822 /* DrawViewController.swift */; };
 		A28E50BD22710D86008CC822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28E50BB22710D86008CC822 /* Main.storyboard */; };
 		A28E50BF22710D87008CC822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28E50BE22710D87008CC822 /* Assets.xcassets */; };
 		A28E50C222710D87008CC822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28E50C022710D87008CC822 /* LaunchScreen.storyboard */; };
+		A28E50CB22710DDA008CC822 /* SwiftyDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50CA22710DDA008CC822 /* SwiftyDraw.swift */; };
+		A28E50CD22710DE1008CC822 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50CC22710DE1008CC822 /* Brush.swift */; };
+		A28E50CF22710E16008CC822 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E50CE22710E15008CC822 /* Extensions.swift */; };
+		A2D1B2D92271E9340026174D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1B2D72271E9330026174D /* Color.swift */; };
+		A2D1B2DA2271E9340026174D /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1B2D82271E9340026174D /* ColorWheel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A28E50B422710D86008CC822 /* Animax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28E50B722710D86008CC822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A28E50B922710D86008CC822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A28E50B922710D86008CC822 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		A28E50BC22710D86008CC822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A28E50BE22710D87008CC822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28E50C122710D87008CC822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A28E50C322710D87008CC822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A28E50CA22710DDA008CC822 /* SwiftyDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyDraw.swift; sourceTree = "<group>"; };
+		A28E50CC22710DE1008CC822 /* Brush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		A28E50CE22710E15008CC822 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../SwiftyDraw/Extensions.swift; sourceTree = "<group>"; };
+		A2D1B2D72271E9330026174D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A2D1B2D82271E9340026174D /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				A28E50B622710D86008CC822 /* Animax */,
+				A28E50C922710DC9008CC822 /* SwiftyDraw */,
 				A28E50B522710D86008CC822 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,13 +66,25 @@
 			isa = PBXGroup;
 			children = (
 				A28E50B722710D86008CC822 /* AppDelegate.swift */,
-				A28E50B922710D86008CC822 /* ViewController.swift */,
+				A28E50B922710D86008CC822 /* DrawViewController.swift */,
 				A28E50BB22710D86008CC822 /* Main.storyboard */,
 				A28E50BE22710D87008CC822 /* Assets.xcassets */,
 				A28E50C022710D87008CC822 /* LaunchScreen.storyboard */,
 				A28E50C322710D87008CC822 /* Info.plist */,
+				A28E50CE22710E15008CC822 /* Extensions.swift */,
+				A2D1B2D72271E9330026174D /* Color.swift */,
+				A2D1B2D82271E9340026174D /* ColorWheel.swift */,
 			);
 			path = Animax;
+			sourceTree = "<group>";
+		};
+		A28E50C922710DC9008CC822 /* SwiftyDraw */ = {
+			isa = PBXGroup;
+			children = (
+				A28E50CA22710DDA008CC822 /* SwiftyDraw.swift */,
+				A28E50CC22710DE1008CC822 /* Brush.swift */,
+			);
+			path = SwiftyDraw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A28E50BA22710D86008CC822 /* ViewController.swift in Sources */,
+				A28E50CF22710E16008CC822 /* Extensions.swift in Sources */,
+				A28E50CB22710DDA008CC822 /* SwiftyDraw.swift in Sources */,
+				A2D1B2D92271E9340026174D /* Color.swift in Sources */,
+				A28E50BA22710D86008CC822 /* DrawViewController.swift in Sources */,
+				A28E50CD22710DE1008CC822 /* Brush.swift in Sources */,
 				A28E50B822710D86008CC822 /* AppDelegate.swift in Sources */,
+				A2D1B2DA2271E9340026174D /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
