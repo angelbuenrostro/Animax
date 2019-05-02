@@ -18,45 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deU-Rh-s7U" customClass="SwiftyDrawView" customModule="Animax" customModuleProvider="target">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deU-Rh-s7U" customClass="SwiftyDrawView" customModule="Animax" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-vM-JmH">
-                                        <rect key="frame" x="498" y="497" width="370" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.01" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vme-kT-abu" userLabel="Brush Opacity Slider">
-                                                <rect key="frame" x="-2" y="0.0" width="154" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="snz-an-0kR"/>
-                                                    <constraint firstAttribute="width" constant="150" id="zSN-U8-guo"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="brushOpacitySliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9B3-uL-iwc"/>
-                                                </connections>
-                                            </slider>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rq-Pz-3LT">
-                                                <rect key="frame" x="170" y="0.0" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="laX-ea-AUt"/>
-                                                </constraints>
-                                                <state key="normal" image="email-action-receive"/>
-                                                <connections>
-                                                    <action selector="optionsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3l-IV-NhJ"/>
-                                                </connections>
-                                            </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-tY-hIN">
-                                                <rect key="frame" x="218" y="0.0" width="154" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="o1E-R8-8f5"/>
-                                                    <constraint firstAttribute="height" constant="30" id="oMp-wi-ZOn"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="brushSizeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gqU-XF-irX"/>
-                                                </connections>
-                                            </slider>
-                                        </subviews>
-                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-Lj-T0S" customClass="ColorWheel" customModule="Animax" customModuleProvider="target">
                                         <rect key="frame" x="87" y="812" width="200" height="200"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,54 +33,6 @@
                                             <action selector="colorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jTL-eh-kz5"/>
                                         </connections>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Gp-Ef-5Vb" userLabel="Colors Stack View">
-                                        <rect key="frame" x="12" y="727.5" width="60" height="271.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aH-95-BdA">
-                                                <rect key="frame" x="11.5" y="0.0" width="37" height="27"/>
-                                                <state key="normal" title="Undo"/>
-                                                <connections>
-                                                    <action selector="undoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="50S-Gf-AWV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-cu-UOd">
-                                                <rect key="frame" x="12" y="47" width="36" height="27.5"/>
-                                                <state key="normal" title="Redo"/>
-                                                <connections>
-                                                    <action selector="redoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4T-6W-1jD"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-Ye-HMQ">
-                                                <rect key="frame" x="8" y="94.5" width="44" height="27"/>
-                                                <state key="normal" title="Eraser"/>
-                                                <connections>
-                                                    <action selector="eraserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeE-a7-Gn0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-p3-vSh">
-                                                <rect key="frame" x="5" y="141.5" width="50" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="deh-sK-QRt"/>
-                                                    <constraint firstAttribute="height" constant="50" id="wxF-z6-hiZ"/>
-                                                </constraints>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-Nw-MZl">
-                                                <rect key="frame" x="0.0" y="211.5" width="60" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="dGE-hC-bZ3"/>
-                                                    <constraint firstAttribute="height" constant="60" id="zkL-96-fvt"/>
-                                                </constraints>
-                                                <state key="normal" image="icons8-color-wheel-2-96"/>
-                                                <connections>
-                                                    <action selector="colorWheelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XK9-XI-cIH"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="qjL-Sm-nJB"/>
-                                        </constraints>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="NNH-Yp-rmp" userLabel="Buttons Stack View">
                                         <rect key="frame" x="44" y="53" width="36" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -132,11 +48,10 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="4Gp-Ef-5Vb" firstAttribute="leading" secondItem="deU-Rh-s7U" secondAttribute="leading" constant="12" id="9ak-X8-q4s"/>
                                     <constraint firstAttribute="bottom" secondItem="vI0-Lj-T0S" secondAttribute="bottom" constant="12" id="iPh-Bn-RhM"/>
                                     <constraint firstItem="vI0-Lj-T0S" firstAttribute="leading" secondItem="deU-Rh-s7U" secondAttribute="leading" constant="87" id="ieH-nM-XxE"/>
-                                    <constraint firstAttribute="bottom" secondItem="4Gp-Ef-5Vb" secondAttribute="bottom" constant="25" id="pEa-EK-mkl"/>
                                     <constraint firstItem="vI0-Lj-T0S" firstAttribute="width" secondItem="vI0-Lj-T0S" secondAttribute="height" multiplier="1:1" id="syE-8O-PJ4"/>
                                 </constraints>
                             </view>
@@ -161,12 +76,116 @@
                         <outlet property="drawView" destination="deU-Rh-s7U" id="V1Q-Yn-82L"/>
                         <outlet property="eraserButton" destination="wrN-Ye-HMQ" id="RrB-kV-Ihr"/>
                         <outlet property="exportButton" destination="eYe-7j-QoN" id="Jn2-u9-yYs"/>
-                        <outlet property="exportView" destination="NBw-d3-qgV" id="Ne5-Tw-kvq"/>
+                        <outlet property="menuView" destination="NBw-d3-qgV" id="Ne5-Tw-kvq"/>
                         <outlet property="optionsButton" destination="6rq-Pz-3LT" id="xyr-pZ-IVR"/>
                         <outlet property="slidersStackView" destination="P2b-vM-JmH" id="hN3-Pw-Se4"/>
+                        <outlet property="toolBarView" destination="4zc-NQ-qRu" id="Eu5-gs-rX0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="4zc-NQ-qRu" userLabel="Toolbar View">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-vM-JmH">
+                            <rect key="frame" x="-155" y="369" width="370" height="30"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.01" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vme-kT-abu" userLabel="Brush Opacity Slider">
+                                    <rect key="frame" x="-2" y="0.0" width="154" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="snz-an-0kR"/>
+                                        <constraint firstAttribute="width" constant="150" id="zSN-U8-guo"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="brushOpacitySliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9B3-uL-iwc"/>
+                                    </connections>
+                                </slider>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rq-Pz-3LT">
+                                    <rect key="frame" x="170" y="0.0" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="laX-ea-AUt"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.46599946409999998" green="0.45591448480000002" blue="0.50250303789999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="MenuButton"/>
+                                    <connections>
+                                        <action selector="optionsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3l-IV-NhJ"/>
+                                    </connections>
+                                </button>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-tY-hIN">
+                                    <rect key="frame" x="218" y="0.0" width="154" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="o1E-R8-8f5"/>
+                                        <constraint firstAttribute="height" constant="30" id="oMp-wi-ZOn"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="brushSizeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gqU-XF-irX"/>
+                                    </connections>
+                                </slider>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4Gp-Ef-5Vb" userLabel="Colors Stack View">
+                            <rect key="frame" x="0.0" y="581" width="60" height="187"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aH-95-BdA">
+                                    <rect key="frame" x="11.5" y="0.0" width="37" height="16.5"/>
+                                    <state key="normal" title="Undo"/>
+                                    <connections>
+                                        <action selector="undoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="50S-Gf-AWV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-cu-UOd">
+                                    <rect key="frame" x="12" y="22.5" width="36" height="16.5"/>
+                                    <state key="normal" title="Redo"/>
+                                    <connections>
+                                        <action selector="redoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4T-6W-1jD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-Ye-HMQ">
+                                    <rect key="frame" x="10" y="45" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="JO8-di-8aL"/>
+                                        <constraint firstAttribute="width" constant="40" id="kp7-xB-qXO"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.46599946409999998" green="0.45591448480000002" blue="0.50250303789999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="EraserButton"/>
+                                    <connections>
+                                        <action selector="eraserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeE-a7-Gn0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-p3-vSh">
+                                    <rect key="frame" x="10" y="91" width="40" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="deh-sK-QRt"/>
+                                        <constraint firstAttribute="height" constant="40" id="wxF-z6-hiZ"/>
+                                    </constraints>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-Nw-MZl">
+                                    <rect key="frame" x="5" y="137" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="dGE-hC-bZ3"/>
+                                        <constraint firstAttribute="height" constant="50" id="zkL-96-fvt"/>
+                                    </constraints>
+                                    <state key="normal" image="icons8-color-wheel-2-96"/>
+                                    <connections>
+                                        <action selector="colorWheelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XK9-XI-cIH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="qjL-Sm-nJB"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="P2b-vM-JmH" firstAttribute="centerY" secondItem="4zc-NQ-qRu" secondAttribute="centerY" id="FLn-L4-5PZ"/>
+                        <constraint firstItem="4Gp-Ef-5Vb" firstAttribute="centerX" secondItem="4zc-NQ-qRu" secondAttribute="centerX" id="nGQ-xG-sQc"/>
+                        <constraint firstAttribute="bottom" secondItem="4Gp-Ef-5Vb" secondAttribute="bottom" id="psb-9m-1MI"/>
+                        <constraint firstItem="P2b-vM-JmH" firstAttribute="centerX" secondItem="4zc-NQ-qRu" secondAttribute="centerX" id="x1h-UM-ZtS"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="OaW-3d-VHR"/>
+                </view>
                 <view contentMode="scaleToFill" id="NBw-d3-qgV">
                     <rect key="frame" x="0.0" y="0.0" width="833" height="391"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -219,7 +238,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="email-action-receive" width="96" height="96"/>
+        <image name="EraserButton" width="128" height="126"/>
+        <image name="MenuButton" width="128" height="128"/>
         <image name="icons8-color-wheel-2-96" width="96" height="96"/>
     </resources>
 </document>

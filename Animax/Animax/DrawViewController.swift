@@ -19,7 +19,8 @@ class DrawViewController: UIViewController {
     }
     var isErasing: Bool = false
 
-    @IBOutlet var exportView: UIView!
+    @IBOutlet var menuView: UIView!
+    @IBOutlet var toolBarView: UIView!
     @IBOutlet weak var exportButton: UIButton!
     @IBOutlet weak var colorWheelButton: UIButton!
     @IBOutlet weak var colorWheel: ColorWheel!
@@ -51,24 +52,24 @@ class DrawViewController: UIViewController {
         }
     }
     
-    func animateIn() {
-        self.view.addSubview(exportView)
-        exportView.center = self.view.center
-        exportView.layer.cornerRadius = 20
-        exportView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        exportView.alpha = 0
+    func animateMenuView() {
+        self.view.addSubview(menuView)
+        menuView.center = self.view.center
+        menuView.layer.cornerRadius = 20
+        menuView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        menuView.alpha = 0
         
         UIView.animate(withDuration: 0.4) {
-            self.exportView.alpha = 1
-            self.exportView.transform = CGAffineTransform.identity
+            self.menuView.alpha = 1
+            self.menuView.transform = CGAffineTransform.identity
         }
     }
 
     @IBAction func optionsButtonTapped(_ sender: Any) {
-        if !self.view.subviews.contains(exportView){
-            animateIn()
+        if !self.view.subviews.contains(menuView){
+            animateMenuView()
         } else {
-            exportView.removeFromSuperview()
+            menuView.removeFromSuperview()
         }
     }
     @IBAction func brushSizeSliderChanged(_ sender: Any) {
@@ -96,7 +97,7 @@ class DrawViewController: UIViewController {
             let alertController = UIAlertController(title: "Oops", message: "Draw something first!", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alertController, animated: true, completion: nil)
-            self.exportView.removeFromSuperview()
+            self.menuView.removeFromSuperview()
             return
         }
         
@@ -112,7 +113,7 @@ class DrawViewController: UIViewController {
                     alertController.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alertController, animated: true, completion: nil)
                     
-                    self.exportView.removeFromSuperview()
+                    self.menuView.removeFromSuperview()
                 }
             } else if let error = error {
                 // pop up alert to notify user
@@ -126,7 +127,7 @@ class DrawViewController: UIViewController {
     }
     
     @IBAction func cancelExportButtonTapped(_ sender: Any) {
-        self.exportView.removeFromSuperview()
+        self.menuView.removeFromSuperview()
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
@@ -151,12 +152,20 @@ class DrawViewController: UIViewController {
     }
     
     func setupUI(){
-        slidersStackView.layer.cornerRadius = 20
+        self.view.addSubview(toolBarView)
+        toolBarView.center = CGPoint(x: 50, y: self.view.center.y)
+        
+        
+        // add Gesture Recognizer
+        addPinchGesture(view: drawView)
+        
+        
+        toolBarView.layer.cornerRadius = 20
         slidersStackView.backgroundColor = .black
         slidersStackView.makeVertical()
         optionsButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-        var sliderPosition = CGPoint(x: 40 , y: view.bounds.height/2)
-        slidersStackView.center = sliderPosition
+        var sliderPosition = toolBarView.center
+        slidersStackView.center = toolBarView.center
         
         
         colorsStackView.center = CGPoint(x:sliderPosition.x, y:sliderPosition.y + colorsStackView.bounds.height + 12)
@@ -165,7 +174,7 @@ class DrawViewController: UIViewController {
         
         colorWheel.isHidden = true
         colorSwatch.clipsToBounds = true
-        colorSwatch.layer.cornerRadius = colorSwatch.bounds.width/2.0
+        colorSwatch.layer.cornerRadius = colorSwatch.bounds.width/3.0
         
         exportButton.layer.cornerRadius = 12
     }
@@ -174,7 +183,7 @@ class DrawViewController: UIViewController {
 extension DrawViewController: SwiftyDrawViewDelegate {
     
     func swiftyDraw(shouldBeginDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) -> Bool { return true }
-    func swiftyDraw(didBeginDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) {  }
+    func swiftyDraw(didBeginDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) {}
     func swiftyDraw(isDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) {  }
     func swiftyDraw(didFinishDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) {  }
     func swiftyDraw(didCancelDrawingIn drawingView: SwiftyDrawView, using touch: UITouch) {  }
@@ -182,3 +191,19 @@ extension DrawViewController: SwiftyDrawViewDelegate {
 
 
 
+extension DrawViewController {
+    
+    func addPinchGesture(view:UIView) {
+        
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(DrawViewController.handlePinch(sender:)))
+        drawView.addGestureRecognizer(pinch)
+    }
+    
+    @objc func handlePinch(sender: UIPinchGestureRecognizer) {
+        
+        let zoomView = sender.view
+        let scale = sender.scale
+        
+        
+    }
+}
