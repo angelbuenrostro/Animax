@@ -18,4 +18,4 @@ Clear
 Save Drawing
 
 
-![](AnimaxSimulator.gif)
+![](AnimaxFeatureDemo.gif)
