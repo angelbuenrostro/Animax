@@ -1,5 +1,5 @@
 # Animax
-2D drawinng application
+2D drawing application
 # Features
 Smooth Line Drawing with Apple Pencil
 
